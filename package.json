@@ -1,0 +1,21 @@
+{
+  "name": "safe-pipe",
+  "version": "0.0.1",
+  "description": "Simple safe pipe for sinitizing your safe content",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/embarq/safe-pipe.git"
+  },
+  "keywords": [
+    "angular",
+    "pipe",
+    "typescript"
+  ],
+  "author": "embarq",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/embarq/safe-pipe/issues"
+  },
+  "homepage": "https://github.com/embarq/safe-pipe#readme"
+}
