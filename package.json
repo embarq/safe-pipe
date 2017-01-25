@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "description": "Simple safe pipe for sinitizing your safe content",
   "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/embarq/safe-pipe.git"
@@ -17,5 +23,14 @@
   "bugs": {
     "url": "https://github.com/embarq/safe-pipe/issues"
   },
-  "homepage": "https://github.com/embarq/safe-pipe#readme"
+  "homepage": "https://github.com/embarq/safe-pipe#readme",
+  "dependencies": {
+    "@angular/common": "^2.4.4",
+    "@angular/core": "^2.4.4",
+    "@angular/platform-browser": "^2.4.4",
+    "rxjs": "^5.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^2.1.5"
+  }
 }
