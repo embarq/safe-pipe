@@ -1,13 +1,13 @@
 {
   "name": "safe-pipe",
-  "version": "0.0.1",
-  "description": "Simple safe pipe for sinitizing your safe content",
-  "main": "index.js",
+  "version": "0.0.5",
+  "description": "Simple safe pipe for sanitizing your safe content",
+  "main": "index.ts",
   "scripts": {
     "build": "tsc"
   },
   "files": [
-    "dist/"
+    "index.ts"
   ],
   "repository": {
     "type": "git",
