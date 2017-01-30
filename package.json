@@ -4,7 +4,7 @@
   "description": "Simple safe pipe for sanitizing your safe content",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && ngc -p tsconfig.json",
     "prepublish": "npm run build"
   },
   "module": [
@@ -32,6 +32,8 @@
     "rxjs": "^5.0.3"
   },
   "devDependencies": {
+    "@angular/compiler": "^2.4.5",
+    "@angular/compiler-cli": "^2.4.5",
     "typescript": "^2.1.5"
   },
   "publishConfig": {

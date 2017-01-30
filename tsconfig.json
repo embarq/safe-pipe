@@ -1,5 +1,7 @@
 {
-  "files": [ "index.ts" ],
+  "files": [
+    "./src/index.ts"
+  ],
   "exclude": [ "node_modules/" ],
   "compilerOptions": {
     "baseUrl": "",
@@ -16,5 +18,9 @@
     "skipLibCheck": true,
     "stripInternal": true,
     "target": "es5"
+  },
+  "angularCompilerOptions": {
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true
   }
 }
