@@ -1,2 +1,2 @@
-export { SafePipe } from './safe.pipe';
-export { SafePipeModule } from './safe.module';
+export * from './safe.pipe';
+export * from './safe.module';

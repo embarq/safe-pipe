@@ -2,9 +2,9 @@
   "name": "safe-pipe",
   "version": "0.0.7",
   "description": "Simple safe pipe for sanitizing your safe content",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "prepublish": "npm run build"
   },
   "module": [
