@@ -1,18 +1,19 @@
 {
+  "files": [ "index.ts" ],
+  "exclude": [ "node_modules/" ],
   "compilerOptions": {
     "baseUrl": "",
-    "declaration": false,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
+    "lib": [ "es6", "dom" ],
+    "inlineSources": false,
     "mapRoot": "./",
-    "module": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "./dist",
     "sourceMap": true,
-    "target": "es5",
-    "typeRoots": [
-      "../node_modules/@types"
-    ]
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "target": "es5"
   }
 }
