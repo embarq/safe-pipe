@@ -1,6 +1,6 @@
 {
   "name": "safe-pipe",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Simple safe pipe for sanitizing your safe content",
   "main": "index.js",
   "scripts": {
