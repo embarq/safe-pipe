@@ -1,5 +1,7 @@
 # Resolve your safe content with Angular SafePipe
 
+[![NPM](https://nodei.co/npm/safe-pipe.png?downloads=true)](https://nodei.co/npm/safe-pipe/)
+
 Install via npm
 
 ```bash
