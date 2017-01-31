@@ -1,12 +1,12 @@
 {
   "name": "safe-pipe",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "description": "Simple safe pipe for sanitizing your safe content",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && ngc -p tsconfig.json",
     "prepublish": "npm run build",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push origin master && git push origin master --tags"
   },
   "module": [
     "index.ts"
