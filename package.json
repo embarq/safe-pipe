@@ -4,9 +4,7 @@
   "description": "Simple safe pipe for sanitizing your safe content",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && ngc -p tsconfig.json",
-    "prepublish": "npm run build",
-    "postversion": "git push origin master && git push origin master --tags"
+    "build": "rm -rf dist && ngc -p tsconfig.json"
   },
   "module": [
     "index.ts"

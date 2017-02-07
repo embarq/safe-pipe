@@ -1,6 +1,6 @@
 {
   "files": [
-    "./src/index.ts"
+    "./index.ts"
   ],
   "exclude": [ "node_modules/" ],
   "compilerOptions": {
@@ -13,7 +13,7 @@
     "mapRoot": "./",
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "./dist",
+    "outDir": "./",
     "sourceMap": true,
     "skipLibCheck": true,
     "stripInternal": true,
