@@ -4,19 +4,39 @@ Resolve your safe content with Angular SafePipe
 
 [![NPM](https://nodei.co/npm/safe-pipe.png?downloads=true)](https://nodei.co/npm/safe-pipe/)
 
-Install via npm
+## Installation
 
-```bash
-npm install safe-pipe
+1. Install the package via `npm install safe-pipe` or `yarn add safe-pipe`
+2. Add `SafePipeModule` module to `NgModule.imports`.
+
+E.g.
+
+```ts
+@NgModule({
+  imports: [ SafePipeModule ]
+})
+export class AppModule { }
 ```
 
-or Yarn
+## Usage
 
-```bash
-yarn add safe-pipe
+The `SafePipe` pipe accepts a value and sanitization type. 
+
+```html
+<elem [prop]="value | safe: sanitizationType"></elem>
 ```
 
-Usage example:
+You can sanitize any resource type supported by [DomSanitizer](https://angular.io/api/platform-browser/DomSanitizer).
+
+Supported sanitization types:
+
+- `'html'` - uses `DomSanitizer.bypassSecurityTrustHtml` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypassSecurityTrustHtml)
+- `'style'` - uses `DomSanitizer.bypassSecurityTrustStyle` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypasssecuritytruststyle)
+- `'script'` - uses `DomSanitizer.bypassSecurityTrustScript` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypasssecuritytrustscript)
+- `'url'` - uses `DomSanitizer.bypassSecurityTrustUrl` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypasssecuritytrusturl)
+- `'resourceUrl'` - uses `DomSanitizer.bypassSecurityTrustResourceUrl` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypasssecuritytrustresourceurl)
+
+Full usage example:
 
 ```ts
 // @file app.module.ts
@@ -44,14 +64,19 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <div [style.background-image]="'url(' + catPictureUrl + ')' | safe: 'style'"></div>
-    <img [src]="catPictureUrl | safe: 'url'" alt="A Cat">
-    <iframe width="640" height="390" [src]="catVideoEmbed | safe: 'resourceUrl'"></iframe>
-  `
+    <div [style.background-image]="'url(' + pictureUrl + ')' | safe: 'style'" class="pic bg-pic"></div>
+    <img [src]="pictureUrl | safe: 'url'" class="pic" alt="Logo">
+    <iframe [src]="catVideoEmbed | safe: 'resourceUrl'" width="640" height="390"></iframe>
+    <pre [innerHTML]="htmlContent | safe: 'html'"></pre>
+  `,
+  styles: [
+    `.pic { display: inline-block; width: 320px; }`,
+    `.bg-pic { padding-top: 320px; }`
+  ]
 })
 export class AppComponent {
   public htmlContent: string = `<h1>Lorem ipsum dolor sit amet.</h1>`;
-  public catPictureUrl: string = `https://www.petdrugsonline.co.uk/images/page-headers/cats-master-header`;
+  public pictureUrl: string = `https://angular.io/assets/images/logos/angular/angular.svg`;
   public catVideoEmbed: string = `https://www.youtube.com/embed/QH2-TGUlwu4"`;
 }
 ```

@@ -1,10 +1,11 @@
 {
   "name": "safe-pipe",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build safe-pipe --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
