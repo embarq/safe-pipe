@@ -1,6 +1,6 @@
 {
   "name": "safe-pipe",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple safe pipe for sanitizing your safe content",
   "repository": {
     "type": "git",
@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/embarq/safe-pipe#readme",
   "peerDependencies": {
-    "@angular/common": "~9.0.7",
-    "@angular/core": "~9.0.7",
-    "@angular/platform-browser": "~9.0.7",
+    "@angular/common": "~9.1.1",
+    "@angular/core": "~9.1.1",
+    "@angular/platform-browser": "~9.1.1",
     "tslib": "~1.10.0"
   }
 }
