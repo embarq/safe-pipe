@@ -3,3 +3,4 @@
  */
 
 export * from './lib/safe-pipe.module';
+export * from './lib/safe-pipe.pipe';

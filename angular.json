@@ -10,7 +10,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/safe-pipe/tsconfig.lib.json",
             "project": "projects/safe-pipe/ng-package.json"
@@ -27,18 +27,6 @@
             "main": "projects/safe-pipe/src/test.ts",
             "tsConfig": "projects/safe-pipe/tsconfig.spec.json",
             "karmaConfig": "projects/safe-pipe/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/safe-pipe/tsconfig.lib.json",
-              "projects/safe-pipe/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
@@ -64,7 +52,6 @@
           "skipTests": true
         },
         "@schematics/angular:module": {
-          "skipTests": true
         },
         "@schematics/angular:pipe": {
           "skipTests": true
@@ -85,7 +72,6 @@
             "main": "projects/safe-pipe-app/src/main.ts",
             "polyfills": "projects/safe-pipe-app/src/polyfills.ts",
             "tsConfig": "projects/safe-pipe-app/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/safe-pipe-app/src/favicon.ico",
               "projects/safe-pipe-app/src/assets"
@@ -93,7 +79,13 @@
             "styles": [
               "projects/safe-pipe-app/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -106,7 +98,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -124,7 +115,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

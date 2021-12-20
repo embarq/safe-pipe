@@ -18,10 +18,12 @@
     "url": "https://github.com/embarq/safe-pipe/issues"
   },
   "homepage": "https://github.com/embarq/safe-pipe#readme",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "peerDependencies": {
     "@angular/common": "~9.1.1",
     "@angular/core": "~9.1.1",
-    "@angular/platform-browser": "~9.1.1",
-    "tslib": "~1.10.0"
+    "@angular/platform-browser": "~9.1.1"
   }
 }
