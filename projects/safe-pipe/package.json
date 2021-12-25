@@ -1,6 +1,6 @@
 {
   "name": "safe-pipe",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Simple safe pipe for sanitizing your safe content",
   "repository": {
     "type": "git",
@@ -22,8 +22,8 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": "~9.1.1",
-    "@angular/core": "~9.1.1",
-    "@angular/platform-browser": "~9.1.1"
+    "@angular/common": "~13.1.1",
+    "@angular/core": "~13.1.1",
+    "@angular/platform-browser": "~13.1.1"
   }
 }
