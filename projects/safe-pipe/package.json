@@ -1,6 +1,6 @@
 {
   "name": "safe-pipe",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Simple safe pipe for sanitizing your safe content",
   "repository": {
     "type": "git",
