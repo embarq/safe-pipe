@@ -1,6 +1,6 @@
 # SafePipe
 
-Resolve your safe content with Angular SafePipe [(Demo)](https://stackblitz.com/edit/safe-pipe-examples)
+Resolve your safe content with Angular SafePipe [(Demo)](https://stackblitz.com/edit/safe-pipe-v2?file=src/app/app.component.html)
 
 [![NPM](https://nodei.co/npm/safe-pipe.png?downloads=true)](https://nodei.co/npm/safe-pipe/)
 
