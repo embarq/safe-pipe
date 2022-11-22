@@ -4,6 +4,12 @@ Resolve your safe content with Angular SafePipe [(Demo)](https://stackblitz.com/
 
 [![NPM](https://nodei.co/npm/safe-pipe.png?downloads=true)](https://nodei.co/npm/safe-pipe/)
 
+## Compatability
+
+angular: >=@12.0.0
+
+For previous angular versions use [safe-pipe@1.0.4](https://www.npmjs.com/package/safe-pipe/v/1.0.4)
+
 ## Installation
 
 1. Install the package via `npm install safe-pipe` or `yarn add safe-pipe`
