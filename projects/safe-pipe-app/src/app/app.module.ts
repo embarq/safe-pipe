@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { SafePipeModule } from "../../../safe-pipe/src/lib/safe-pipe.module";
+import { SafePipe } from "../../../safe-pipe/src/lib/safe-pipe.pipe";
 import { AppComponent } from "./app.component";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, SafePipeModule],
+  imports: [BrowserModule, SafePipe],
   providers: [],
   bootstrap: [AppComponent],
 })
