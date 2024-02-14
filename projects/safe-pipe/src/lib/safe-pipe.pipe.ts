@@ -3,11 +3,11 @@ import { DomSanitizer, SafeHtml, SafeResourceUrl, SafeScript, SafeStyle, SafeUrl
 
 // prettier-ignore
 export type SafePipeType
-= 'html'
-| 'style'
-| 'script'
-| 'url'
-| 'resourceUrl';
+  = 'html'
+  | 'style'
+  | 'script'
+  | 'url'
+  | 'resourceUrl';
 
 @Pipe({
   standalone: true,
