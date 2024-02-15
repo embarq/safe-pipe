@@ -1,21 +1,29 @@
 # SafePipe
 
-Resolve your safe content with Angular SafePipe [(Demo)](https://stackblitz.com/edit/safe-pipe-v2?file=src/app/app.component.html)
+Resolve your safe content with Angular SafePipe ([Demo](https://stackblitz.com/edit/safe-pipe-examples-v3))
 
 [![NPM](https://nodei.co/npm/safe-pipe.png?downloads=true)](https://nodei.co/npm/safe-pipe/)
+
+## Compatibility
+
+This package is compatible with angular >=17.
+
+For angular >=13 use [safe-pipe@2.0.5-0](https://www.npmjs.com/package/safe-pipe/v/2.0.5-0).
+
+For angular <13 use [safe-pipe@1.0.4](https://www.npmjs.com/package/safe-pipe/v/1.0.4)
 
 ## Installation
 
 1. Install the package via `npm install safe-pipe` or `yarn add safe-pipe`
-2. Add `SafePipeModule` module to `NgModule.imports`.
+2. Add `SafePipe` standalone to `Component.imports`.
 
-E.g.
-
+E.g. 
 ```ts
-@NgModule({
-  imports: [ SafePipeModule ]
+@Component({
+  standalone: true,
+  imports: [ SafePipe ]
 })
-export class AppModule { }
+export class MyComponent { }
 ```
 
 ## Usage
@@ -36,70 +44,32 @@ Supported sanitization types:
 - `'url'` - uses `DomSanitizer.bypassSecurityTrustUrl` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypasssecuritytrusturl)
 - `'resourceUrl'` - uses `DomSanitizer.bypassSecurityTrustResourceUrl` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypasssecuritytrustresourceurl)
 
-Full usage example:
+[🔗 Full usage example](https://stackblitz.com/edit/safe-pipe-examples-v3).
 
-```ts
-// @file app.module.ts
+Here're the previous package's version examples:
+- [Demo v2](https://stackblitz.com/edit/safe-pipe-examples-v2)
+- [Demo v1](https://stackblitz.com/edit/safe-pipe-examples)
 
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { SafePipeModule } from 'safe-pipe';
+## Development
 
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [ AppComponent ],
-  imports: [
-    SafePipeModule,
-    BrowserModule
-  ]
-  bootstrap: [ AppComponent ]
-})
-export class AppModule { }
-
-// @file app.component.ts
-
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: `
-    <div [style.background-image]="'url(' + pictureUrl + ')' | safe: 'style'" class="pic bg-pic"></div>
-    <img [src]="pictureUrl | safe: 'url'" class="pic" alt="Logo">
-    <iframe [src]="catVideoEmbed | safe: 'resourceUrl'" width="640" height="390"></iframe>
-    <pre [innerHTML]="htmlContent | safe: 'html'"></pre>
-  `,
-  styles: [
-    `.pic { display: inline-block; width: 320px; }`,
-    `.bg-pic { padding-top: 320px; }`
-  ]
-})
-export class AppComponent {
-  public htmlContent: string = `<h1>Lorem ipsum dolor sit amet.</h1>`;
-  public pictureUrl: string = `https://angular.io/assets/images/logos/angular/angular.svg`;
-  public catVideoEmbed: string = `https://www.youtube.com/embed/QH2-TGUlwu4"`;
-}
-```
-
-### Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
 ### Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate component component-name --project safe-pipe` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project safe-pipe`.
+> Note: Don't forget to add `--project safe-pipe` or else it will be added to the default project in your `angular.json` file. 
 
 ### Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build safe-pipe` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+### Publishing
+
+After building your library with `ng build safe-pipe`, go to the dist folder `cd dist/safe-pipe` and run `npm publish`.
 
 ### Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-### Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng test safe-pipe` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ### Further help
 

@@ -3,7 +3,7 @@
   "cli": {
     "analytics": false
   },
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "safe-pipe": {
@@ -33,112 +33,6 @@
           }
         }
       }
-    },
-    "safe-pipe-app": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "inlineTemplate": true,
-          "inlineStyle": true,
-          "skipTests": true
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
-      "root": "projects/safe-pipe-app",
-      "sourceRoot": "projects/safe-pipe-app/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/safe-pipe-app",
-            "index": "projects/safe-pipe-app/src/index.html",
-            "main": "projects/safe-pipe-app/src/main.ts",
-            "polyfills": "projects/safe-pipe-app/src/polyfills.ts",
-            "tsConfig": "projects/safe-pipe-app/tsconfig.app.json",
-            "assets": [
-              "projects/safe-pipe-app/src/favicon.ico",
-              "projects/safe-pipe-app/src/assets"
-            ],
-            "styles": [
-              "projects/safe-pipe-app/src/styles.css"
-            ],
-            "scripts": [],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/safe-pipe-app/src/environments/environment.ts",
-                  "with": "projects/safe-pipe-app/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          },
-          "defaultConfiguration": ""
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "safe-pipe-app:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "safe-pipe-app:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "safe-pipe-app:build"
-          }
-        }
-      }
-    }},
-  "defaultProject": "safe-pipe"
+    }
+  }
 }

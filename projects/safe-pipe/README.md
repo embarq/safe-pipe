@@ -1,27 +1,29 @@
 # SafePipe
 
-Resolve your safe content with Angular SafePipe [(Demo)](https://stackblitz.com/edit/safe-pipe-examples)
+Resolve your safe content with Angular SafePipe ([Demo](https://stackblitz.com/edit/safe-pipe-examples-v3))
 
 [![NPM](https://nodei.co/npm/safe-pipe.png?downloads=true)](https://nodei.co/npm/safe-pipe/)
 
-## Compatability
+## Compatibility
 
-angular: >=@12.0.0
+This package is compatible with angular >=17.
 
-For previous angular versions use [safe-pipe@1.0.4](https://www.npmjs.com/package/safe-pipe/v/1.0.4)
+For angular >=13 use [safe-pipe@2.0.5-0](https://www.npmjs.com/package/safe-pipe/v/2.0.5-0).
+
+For angular <13 use [safe-pipe@1.0.4](https://www.npmjs.com/package/safe-pipe/v/1.0.4)
 
 ## Installation
 
 1. Install the package via `npm install safe-pipe` or `yarn add safe-pipe`
-2. Add `SafePipeModule` module to `NgModule.imports`.
+2. Add `SafePipe` standalone to `Component.imports`.
 
-E.g.
-
+E.g. 
 ```ts
-@NgModule({
-  imports: [ SafePipeModule ]
+@Component({
+  standalone: true,
+  imports: [ SafePipe ]
 })
-export class AppModule { }
+export class MyComponent { }
 ```
 
 ## Usage
@@ -42,50 +44,11 @@ Supported sanitization types:
 - `'url'` - uses `DomSanitizer.bypassSecurityTrustUrl` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypasssecuritytrusturl)
 - `'resourceUrl'` - uses `DomSanitizer.bypassSecurityTrustResourceUrl` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypasssecuritytrustresourceurl)
 
-Full usage example:
+[🔗 Full usage example](https://stackblitz.com/edit/safe-pipe-examples-v3).
 
-```ts
-// @file app.module.ts
-
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { SafePipeModule } from 'safe-pipe';
-
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [ AppComponent ],
-  imports: [
-    SafePipeModule,
-    BrowserModule
-  ]
-  bootstrap: [ AppComponent ]
-})
-export class AppModule { }
-
-// @file app.component.ts
-
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: `
-    <div [style.background-image]="'url(' + pictureUrl + ')' | safe: 'style'" class="pic bg-pic"></div>
-    <img [src]="pictureUrl | safe: 'url'" class="pic" alt="Logo">
-    <iframe [src]="catVideoEmbed | safe: 'resourceUrl'" width="640" height="390"></iframe>
-    <pre [innerHTML]="htmlContent | safe: 'html'"></pre>
-  `,
-  styles: [
-    `.pic { display: inline-block; width: 320px; }`,
-    `.bg-pic { padding-top: 320px; }`
-  ]
-})
-export class AppComponent {
-  public htmlContent: string = `<h1>Lorem ipsum dolor sit amet.</h1>`;
-  public pictureUrl: string = `https://angular.io/assets/images/logos/angular/angular.svg`;
-  public catVideoEmbed: string = `https://www.youtube.com/embed/QH2-TGUlwu4"`;
-}
-```
+Here're the previous package's version examples:
+- [Demo v2](https://stackblitz.com/edit/safe-pipe-examples-v2)
+- [Demo v1](https://stackblitz.com/edit/safe-pipe-examples)
 
 ## Development
 
