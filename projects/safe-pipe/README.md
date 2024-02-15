@@ -1,14 +1,16 @@
 # SafePipe
 
-Resolve your safe content with Angular SafePipe [(Demo)](https://stackblitz.com/edit/safe-pipe-examples)
+Resolve your safe content with Angular SafePipe [(Demo v1)](https://stackblitz.com/edit/safe-pipe-examples)
 
 [![NPM](https://nodei.co/npm/safe-pipe.png?downloads=true)](https://nodei.co/npm/safe-pipe/)
 
 ## Compatability
 
-angular: >=@12.0.0
+This package is compatible with angular >=17.
 
-For previous angular versions use [safe-pipe@1.0.4](https://www.npmjs.com/package/safe-pipe/v/1.0.4)
+For angular >=13 use [safe-pipe@2.0.5-0](https://www.npmjs.com/package/safe-pipe/v/2.0.5-0).
+
+For angulat <13 use [safe-pipe@1.0.4](https://www.npmjs.com/package/safe-pipe/v/1.0.4)
 
 ## Installation
 
