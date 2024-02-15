@@ -15,7 +15,7 @@ For angular <13 use [safe-pipe@1.0.4](https://www.npmjs.com/package/safe-pipe/v/
 ## Installation
 
 1. Install the package via `npm install safe-pipe` or `yarn add safe-pipe`
-2. Add `SafePipe` standalone to `NgModule.imports`.
+2. Add `SafePipe` standalone to `Component.imports`.
 
 E.g. 
 ```ts
