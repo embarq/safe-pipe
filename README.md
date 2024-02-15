@@ -7,10 +7,23 @@ Resolve your safe content with Angular SafePipe [(Demo)](https://stackblitz.com/
 ## Installation
 
 1. Install the package via `npm install safe-pipe` or `yarn add safe-pipe`
+
+
+## >= v17.1.0
+2. Add `SafePipe` standalone to `NgModule.imports`.
+
+E.g. 
+```ts
+@NgModule({
+  imports: [ SafePipe ]
+})
+export class AppModule { }
+```
+
+## <= v17.0.0
 2. Add `SafePipeModule` module to `NgModule.imports`.
 
 E.g.
-
 ```ts
 @NgModule({
   imports: [ SafePipeModule ]
@@ -43,14 +56,14 @@ Full usage example:
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { SafePipeModule } from 'safe-pipe';
+import { SafePipe } from 'safe-pipe';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [ AppComponent ],
   imports: [
-    SafePipeModule,
+    SafePipe,
     BrowserModule
   ]
   bootstrap: [ AppComponent ]
