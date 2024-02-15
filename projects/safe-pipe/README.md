@@ -19,7 +19,7 @@ For angular <13 use [safe-pipe@1.0.4](https://www.npmjs.com/package/safe-pipe/v/
 
 E.g. 
 ```ts
-@NgModule({
+@NgComponent({
   standalone: true,
   imports: [ SafePipe ]
 })
