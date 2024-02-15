@@ -1,6 +1,6 @@
 # SafePipe
 
-Resolve your safe content with Angular SafePipe [(Demo v1)](https://stackblitz.com/edit/safe-pipe-examples), [(Demo v2)](https://stackblitz.com/edit/safe-pipe-examples-v2), [(Demo v3)](https://stackblitz.com/edit/safe-pipe-examples-v3)
+Resolve your safe content with Angular SafePipe ([Demo](https://stackblitz.com/edit/safe-pipe-examples-v3))
 
 [![NPM](https://nodei.co/npm/safe-pipe.png?downloads=true)](https://nodei.co/npm/safe-pipe/)
 
@@ -20,18 +20,10 @@ For angular <13 use [safe-pipe@1.0.4](https://www.npmjs.com/package/safe-pipe/v/
 E.g. 
 ```ts
 @NgModule({
+  standalone: true,
   imports: [ SafePipe ]
 })
-export class AppModule { }
-```
-
-E.g.
-
-```ts
-@NgModule({
-  imports: [ SafePipeModule ]
-})
-export class AppModule { }
+export class MyComponent { }
 ```
 
 ## Usage
@@ -52,50 +44,11 @@ Supported sanitization types:
 - `'url'` - uses `DomSanitizer.bypassSecurityTrustUrl` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypasssecuritytrusturl)
 - `'resourceUrl'` - uses `DomSanitizer.bypassSecurityTrustResourceUrl` [(docs)](https://angular.io/api/platform-browser/DomSanitizer#bypasssecuritytrustresourceurl)
 
-Full usage example:
+[🔗 Full usage example](https://stackblitz.com/edit/safe-pipe-examples-v3).
 
-```ts
-// @file app.module.ts
-
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { SafePipe } from 'safe-pipe';
-
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [ AppComponent ],
-  imports: [
-    SafePipe,
-    BrowserModule
-  ]
-  bootstrap: [ AppComponent ]
-})
-export class AppModule { }
-
-// @file app.component.ts
-
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: `
-    <div [style.background-image]="'url(' + pictureUrl + ')' | safe: 'style'" class="pic bg-pic"></div>
-    <img [src]="pictureUrl | safe: 'url'" class="pic" alt="Logo">
-    <iframe [src]="catVideoEmbed | safe: 'resourceUrl'" width="640" height="390"></iframe>
-    <pre [innerHTML]="htmlContent | safe: 'html'"></pre>
-  `,
-  styles: [
-    `.pic { display: inline-block; width: 320px; }`,
-    `.bg-pic { padding-top: 320px; }`
-  ]
-})
-export class AppComponent {
-  public htmlContent: string = `<h1>Lorem ipsum dolor sit amet.</h1>`;
-  public pictureUrl: string = `https://angular.io/assets/images/logos/angular/angular.svg`;
-  public catVideoEmbed: string = `https://www.youtube.com/embed/QH2-TGUlwu4"`;
-}
-```
+Here're the previous package's version examples:
+- [Demo v2](https://stackblitz.com/edit/safe-pipe-examples-v2)
+- [Demo v1](https://stackblitz.com/edit/safe-pipe-examples)
 
 ## Development
 
